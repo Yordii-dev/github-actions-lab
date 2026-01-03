@@ -17,3 +17,6 @@ jobs:
         run: |
           REF=$GITHUB_REF 
           echo $REF
+
+      - name: SECRETS
+        run: echo ${{secrets.GREETING}}
