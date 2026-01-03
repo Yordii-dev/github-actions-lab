@@ -11,4 +11,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: SHA ENVIRONMENT
-        run: echo $GITHUB_SHA
+        run: echo $GITHUB_SHAç
+
+      - name: REF ENVIRONMENT
+        run: |
+          REF = $GITHUB_REF 
+          echo $REF
