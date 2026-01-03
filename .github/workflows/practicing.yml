@@ -15,5 +15,5 @@ jobs:
 
       - name: REF ENVIRONMENT
         run: |
-          REF = $GITHUB_REF 
+          REF=$GITHUB_REF 
           echo $REF
