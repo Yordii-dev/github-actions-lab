@@ -1,10 +1,11 @@
 name: Workflow - Practicing Github Actions
-on:
-  schedule:
-    - cron: "15 1 * * *"
+on: push
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Step 1
+      - name: Step without action
         run: echo "commit"
+
+      - name: Step with action CHECKOUT REPO
+        uses: actions/checkout@v4
