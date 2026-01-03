@@ -1,6 +1,6 @@
 name: Deploy Angular to VPS (Build on CI)
 
-on: workflow_dispatch
+on: repository_dispatch
 
 jobs:
   build-and-deploy:
