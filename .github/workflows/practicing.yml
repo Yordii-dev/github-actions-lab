@@ -41,5 +41,5 @@ jobs:
           echo ${{github.ref}}
 
       - name: Step with REF context and tag validation
-        if: ${{github.ref == 'ref/tags/v2.2'}}
+        if: github.ref == 'ref/heads/main'
         run: echo "${{github.ref}} in new tag v2.2"
