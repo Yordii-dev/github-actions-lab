@@ -1,0 +1,14 @@
+name: Workflow - Practicing Github Actions
+on:
+  push:
+    tags: v2
+env:
+  GREETING: ${{secrets.GREETING}}
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      GREETING: "Hello tag v2"
+    steps:
+      - name: Step 1
+        run: echo $GREETING
