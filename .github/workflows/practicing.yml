@@ -24,4 +24,6 @@ jobs:
         run: echo ${{secrets.GREETING}}
 
       - name: SECRET STORED IN WORKFLOW VAR
-        run: echo $GREETIN
+        run: |
+          set -u
+          echo $GREETIN
