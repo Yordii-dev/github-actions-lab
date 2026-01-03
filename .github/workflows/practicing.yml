@@ -11,31 +11,35 @@ jobs:
       - name: Step without action
         run: echo "commit"
 
-      - name: action CHECKOUT REPO
+      - name: Step with action
         uses: actions/checkout@v4
 
-      - name: SHA ENVIRONMENT
+      - name: Step with default env var called SHA
         run: echo $GITHUB_SHAç
 
-      - name: REF ENVIRONMENT
+      - name: Step with default env var called REF stored in REF var bash (type of shell)
         run: |
           REF=$GITHUB_REF 
           echo $REF
 
-      - name: SECRETS
+      - name: Step with secret
         run: echo ${{secrets.GREETING}}
 
-      - name: SECRET STORED IN WORKFLOW VAR
+      - name: Step with secret stored in workflow env and if not exists show error, by default there is not error by empty string
         run: |
           set -u
           echo $GREETING
 
-      - name: SECRET STORED IN WORKFLOW VAR
+      - name: Step with job env
         run: |
           set -u
           echo $GREETING
 
-      - name: GITHUB VARIABLES
+      - name: Step with REF context
         run: |
           set -u
           echo ${{github.ref}}
+
+      - name: Step with REF context and tag validation
+        if: ${{github.ref == 'ref/tags/v2.2'}}
+        run: echo "${{github.ref}} in new tag v2.2"
