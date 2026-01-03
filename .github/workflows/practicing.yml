@@ -1,5 +1,7 @@
 name: Workflow - Practicing Github Actions
 on: push
+env:
+  GREETING: ${{secrets.GREETING}}
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -20,3 +22,6 @@ jobs:
 
       - name: SECRETS
         run: echo ${{secrets.GREETING}}
+
+      - name: SECRET STORED IN WORKFLOW VAR
+        run: echo $GREETING
